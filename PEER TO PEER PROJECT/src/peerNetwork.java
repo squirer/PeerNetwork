@@ -27,6 +27,20 @@ public class peerNetwork {
 		
 
 		 SearchResult[] results = joiner.search(words);
+		 
+		 printNodeInfo(bootstrap);
+		 printNodeInfo(joiner);
+		 
+		 
+		 /*CODE BELOW COMMENTED OUT WAS USED FOR TESTING PURPOSES
+		  * SIMPLY CREATES A NUMBER OF DIFFERENT NODES AND TESTED JOINING
+		  *  BETWEEN THEM 
+		  * 
+		  * 
+		  * */
+		 
+		 
+		 
 /*
 		InetSocketAddress ip3 = new InetSocketAddress("127.0.0.1", 8797);
 		Node joiner2 = new Node(ip3, "chicken");
@@ -48,8 +62,7 @@ public class peerNetwork {
 		joinResult = (int) joiner5.joinNetwork(ip, "key", "software");
 		System.out.println("join result is:  " + joinResult);
 */
-		printNodeInfo(bootstrap);
-		printNodeInfo(joiner);
+		
 /*		printNodeInfo(joiner2);
 		printNodeInfo(joiner3);
 		printNodeInfo(joiner4);
@@ -85,7 +98,9 @@ public class peerNetwork {
 
 
 
-	/*prints elements of a Node for testing purposes*/
+	/*Simply prints the elements of given Nodes
+	 * This was also used for testing purposes to ensure that correct
+	 * information was being used throughout the program*/
 	public static void printNodeInfo(Node n) {
 		System.out.println("word: " + n.word);
 		System.out.println("GUID: " + n.GUID);
