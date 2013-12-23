@@ -24,6 +24,9 @@ public class peerNetwork {
 		joiner.indexPage("www.google.com", words);
 		joiner.indexPage("www.google.com", words);
 		joiner.indexPage("www.bebo.ie", words);
+		
+
+		 SearchResult[] results = joiner.search(words);
 /*
 		InetSocketAddress ip3 = new InetSocketAddress("127.0.0.1", 8797);
 		Node joiner2 = new Node(ip3, "chicken");
