@@ -1,7 +1,7 @@
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.util.Enumeration;
-import java.util.UUID;
+
 
 public class peerNetwork {
 
@@ -18,7 +18,13 @@ public class peerNetwork {
 		Node joiner = new Node(ip2, "compute");
 		joinResult = (int) joiner.joinNetwork(ip, "compute", "software");
 		System.out.println("join result is:  " + joinResult);
+		
+		String words[] = {"software"};
 
+		joiner.indexPage("www.google.com", words);
+		joiner.indexPage("www.google.com", words);
+		joiner.indexPage("www.bebo.ie", words);
+/*
 		InetSocketAddress ip3 = new InetSocketAddress("127.0.0.1", 8797);
 		Node joiner2 = new Node(ip3, "chicken");
 		joinResult = (int) joiner2.joinNetwork(ip, "chicken", "software");
@@ -38,14 +44,14 @@ public class peerNetwork {
 		Node joiner5 = new Node(ip6, "key");
 		joinResult = (int) joiner5.joinNetwork(ip, "key", "software");
 		System.out.println("join result is:  " + joinResult);
-
+*/
 		printNodeInfo(bootstrap);
 		printNodeInfo(joiner);
-		printNodeInfo(joiner2);
+/*		printNodeInfo(joiner2);
 		printNodeInfo(joiner3);
 		printNodeInfo(joiner4);
 		printNodeInfo(joiner5);
-
+*/
 
 		/*
 		int result = (int) joiner.joinNetwork(ip, "compute", "software");
@@ -67,7 +73,7 @@ public class peerNetwork {
 		}
 		 */
 
-		Enumeration iterator;
+		Enumeration<?> iterator;
 		iterator = bootstrap.routingInformation.keys();
 		while(iterator.hasMoreElements()) {
 			System.out.println(iterator.nextElement());
