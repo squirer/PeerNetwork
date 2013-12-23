@@ -1,4 +1,0 @@
-PeerNetwork
-===========
-
-distributed systems project
